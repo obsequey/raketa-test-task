@@ -18,13 +18,67 @@
     </ul>
   </nav>
   <main>
-    <h1>Наши номера</h1>
-    <select name="" id="" class="filter">
-      <option value="square_asc">По площади</option>
-      <option value="square_des">По площади</option>
-      <option value="price_asc">По цене</option>
-      <option value="price_des">По цене</option>
-    </select>
+    <header>
+      Наши номера
+      <select name="" id="" class="filter">
+        <option value="square_asc">По площади</option>
+        <option value="square_des">По площади</option>
+        <option value="price_asc">По цене</option>
+        <option value="price_des">По цене</option>
+      </select>
+    </header>
+    <aside class="filter">
+      <div class="filter__price">
+        <header>Цена за сутки,₽</header>
+        <label>от <input type="number" name="" id=""></label>
+        <label>до <input type="number" name="" id=""></label>
+      </div>
+      <div class="filter__square">
+        <header>Площадь</header>
+        <ul>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+        </ul>
+      </div>
+      <div class="filter__furniture">
+        <header>Оснащение номера</header>
+        <ul>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+          <li><label for=""><input type="checkbox" name="" id=""></label></li>
+        </ul>
+      </div>
+      <button class="submit">Применить</button>
+      <button class="reset">Сбросить фильтр</button>
+    </aside>
+    <section class="variants">
+      <div class="card">
+        <div class="card__image-container"><img src="" alt="котик"></div>
+        <div class="card__body">
+          <h2>Эконом</h2>
+          <ul>
+            <li>Размеры (ШхГхВ) - <span>90х70х180 см</span></li>
+            <li>Площадь - <span>0,63 м2</span></li>
+            <li>
+              Оснащение номера 
+              <ul>
+                <!-- a li for each -->
+                <li></li>
+              </ul>
+            </li>
+            <li>Цена за сутки: <span>100₽</span></li>
+            <button></button>
+          </ul>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <script src="app.js"></script>

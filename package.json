@@ -28,5 +28,7 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "reset-css": "^5.0.1"
+  }
 }
