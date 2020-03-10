@@ -15,7 +15,9 @@ async function transpileScripts() {
 
 async function transpileStyles() {
   return await src('src/*.scss')
-    .pipe(sass())
+    .pipe(sass({
+      includePaths: ['node_modules/reset-css/sass']
+    }))
     .pipe(autoprefixer())
     .pipe(dest('dist'))
     .pipe(browserSync.stream())
@@ -26,8 +28,8 @@ async function transpileMarkup() {
     .pipe(dest('dist'))
 }
 
-function processAssets() {
-  return src('src/img/*')
+async function processAssets() {
+  return await src('src/img/*')
     .pipe(imagemin())
     .pipe(dest('dist/img'))
 }
