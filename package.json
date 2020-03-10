@@ -1,0 +1,30 @@
+{
+  "name": "raketa-test-task",
+  "version": "1.0.0",
+  "description": "This repo is for one specific [problem](https://www.notion.so/junior-25c0404aa5464573b5e9799e6cf31e28)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obsequey/raketa-test-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/obsequey/raketa-test-task/issues"
+  },
+  "homepage": "https://github.com/obsequey/raketa-test-task#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/register": "^7.8.6",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {}
+}
