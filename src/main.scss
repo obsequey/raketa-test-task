@@ -3,3 +3,24 @@
 html {
   font-family: Lato, sans-serif;
 }
+
+nav {
+  margin: 12px 98px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    li {
+      margin-right: 30px;
+      font-size: 16px;
+      &:last-child {
+        margin-right: 0px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
