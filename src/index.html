@@ -42,9 +42,31 @@
               </svg>
             </div>
             <div id="options">
+              <!-- 1 option -->
               <div class="option">
                 <label>
-                  <input type="radio" name="platform" id="" />
+                  <input type="radio" name="platform" />
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.5 1L1 3.35294M3.5 1L6 3.35294M3.5 1V11"
+                      stroke="#141312"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  По площади
+                </label>
+              </div>
+              <!-- 2 option -->
+              <div class="option">
+                <label>
+                  <input type="radio" name="platform" />
                   <svg
                     width="7"
                     height="12"
@@ -62,49 +84,10 @@
                   По площади
                 </label>
               </div>
+              <!-- 3 option -->
               <div class="option">
                 <label>
-                  <input type="radio" name="platform" id="" />
-                  <svg
-                    width="7"
-                    height="12"
-                    viewBox="0 0 7 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
-                      stroke="#141312"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  По площади
-                </label>
-              </div>
-              <div class="option">
-                <label>
-                  <input type="radio" name="platform" id="" checked />
-                  <svg
-                    width="7"
-                    height="12"
-                    viewBox="0 0 7 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
-                      stroke="#141312"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  По цене
-                </label>
-              </div>
-              <div class="option">
-                <label>
-                  <input type="radio" name="platform" id="" />
+                  <input type="radio" name="platform" checked />
                   <svg
                     width="7"
                     height="12"
@@ -122,6 +105,27 @@
                   По цене
                 </label>
               </div>
+              <!-- 4 option -->
+              <div class="option">
+                <label>
+                  <input type="radio" name="platform" />
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
+                      stroke="#141312"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  По цене
+                </label>
+              </div>
             </div>
           </div>
         </form>
@@ -129,29 +133,29 @@
       <aside class="filter">
         <div class="filter__price">
           <header>Цена за сутки,₽</header>
-          <label>от <input type="number" value="100" name="" id=""/></label>
-          <label>до <input type="number" value="600" name="" id=""/></label>
+          <label>от <input type="number" value="100" name=""/></label>
+          <label>до <input type="number" value="600" name=""/></label>
         </div>
         <div class="filter__square">
           <header>Площадь</header>
           <ul>
             <li>
-              <label><input type="checkbox" name="" id="" />0,63 м2</label>
+              <label><input type="checkbox" name="" />0,63 м2</label>
             </li>
             <li>
-              <label><input type="checkbox" name="" id="" />0,90 м2</label>
+              <label><input type="checkbox" name="" />0,90 м2</label>
             </li>
             <li>
-              <label><input type="checkbox" name="" id="" />1,13 м2</label>
+              <label><input type="checkbox" name="" />1,13 м2</label>
             </li>
             <li>
-              <label><input type="checkbox" name="" id="" />1,56 м2</label>
+              <label><input type="checkbox" name="" />1,56 м2</label>
             </li>
             <li>
-              <label><input type="checkbox" name="" id="" />2,56 м2</label>
+              <label><input type="checkbox" name="" />2,56 м2</label>
             </li>
             <li>
-              <label><input type="checkbox" name="" id="" />2,88 м2</label>
+              <label><input type="checkbox" name="" />2,88 м2</label>
             </li>
           </ul>
         </div>
@@ -159,21 +163,19 @@
           <header>Оснащение номера</header>
           <ul>
             <li>
-              <label><input type="checkbox" name="" id="" />Пустой номер</label>
+              <label><input type="checkbox" name="" />Пустой номер</label>
             </li>
             <li>
-              <label><input type="checkbox" name="" id="" />Лежак</label>
+              <label><input type="checkbox" name="" />Лежак</label>
             </li>
             <li>
-              <label><input type="checkbox" name="" id="" />Когтеточка</label>
+              <label><input type="checkbox" name="" />Когтеточка</label>
             </li>
             <li>
-              <label
-                ><input type="checkbox" name="" id="" />Игровой-комплекс</label
-              >
+              <label><input type="checkbox" name="" />Игровой-комплекс</label>
             </li>
             <li>
-              <label><input type="checkbox" name="" id="" />Домик</label>
+              <label><input type="checkbox" name="" />Домик</label>
             </li>
           </ul>
         </div>
