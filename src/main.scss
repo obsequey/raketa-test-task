@@ -70,11 +70,15 @@ html {
 }
 
 nav {
-  margin: 12px 98px;
+  padding: 12px 98px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 70px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 20;
 
   ul {
     display: flex;
@@ -182,6 +186,8 @@ main {
       }
 
       #options {
+        background-color: white;
+        overflow: hidden;
         position: absolute;
         width: 174px;
         right: 0;
@@ -217,7 +223,7 @@ main {
 
   .filter {
     width: 210px;
-    margin-right: 90px;
+    margin-right: 60px;
     position: relative;
 
     input[type="checkbox"] {
@@ -326,23 +332,32 @@ main {
           }
         }
       }
+
+      &.reset {
+        transform: translateX(-100vw);
+        &.shown {
+          transform: translateX(0);
+        }
+      }
     }
   }
 
   .variants {
     display: flex;
-    width: calc(100% - 300px);
+    width: calc(100% - 270px);
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: -60px;
     .card {
       min-width: 270px;
+      max-width: 320px;
       // flex: 0 1 calc(33% - 30px);
-      flex: calc(33% - 30px);
+      width: calc(33% - 30px);
       box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
       border-radius: 6px;
-      margin-right: 30px;
+      margin-left: 30px;
       margin-bottom: 30px;
-
       overflow: hidden;
       &__image-container {
         overflow: hidden;
