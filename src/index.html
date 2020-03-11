@@ -1,98 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test 2</title>
-  <link rel="stylesheet" href="main.css">
-</head>
-<body>
-  <nav>
-    <div class="logo-container"><img src="img/logo.svg" alt="лого"></div>
-    <ul>
-      <li><a href="#">Почему мы?</a></li>
-      <li><a href="#">Номера</a></li>
-      <li><a href="#">Отзывы</a></li>
-      <li><a href="#">Как нас найти</a></li>
-    </ul>
-  </nav>
-  <main>
-    <div class="row">
-      <h1>Наши номера</h1>
-      <div class="custom-select dropdown-opened">
-        <select name="" id="">
-          <option value="square_asc">
-            <svg width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.5 11L6 8.647M3.5 11L1 8.647M3.5 11V1" stroke="#141312" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            По площади
-          </option>
-          <option value="square_des">По площади</option>
-          <option value="price_asc">
-              <svg width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.5 11L6 8.647M3.5 11L1 8.647M3.5 11V1" stroke="#141312" stroke-linecap="round" stroke-linejoin="round" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test 2</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo-container"><img src="img/logo.svg" alt="лого" /></div>
+      <ul>
+        <li><a href="#">Почему мы?</a></li>
+        <li><a href="#">Номера</a></li>
+        <li><a href="#">Отзывы</a></li>
+        <li><a href="#">Как нас найти</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="row">
+        <h1>Наши номера</h1>
+        <form class="custom-select">
+          <div class="select-box">
+            <input type="checkbox" name="" id="options-view-button" />
+            <div id="select-button" class="select-input">
+              <div id="selected-value"></div>
+              <svg
+                id="arrow"
+                width="14"
+                height="8"
+                viewBox="0 0 14 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 7L7 1L1 7"
+                  stroke="#1A212F"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
-              По цене
-            </option>
-          <option value="price_des">По цене</option>
-        </select>
+            </div>
+            <div id="options">
+              <div class="option">
+                <label>
+                  <input type="radio" name="platform" id="" />
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
+                      stroke="#141312"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  По площади
+                </label>
+              </div>
+              <div class="option">
+                <label>
+                  <input type="radio" name="platform" id="" />
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
+                      stroke="#141312"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  По площади
+                </label>
+              </div>
+              <div class="option">
+                <label>
+                  <input type="radio" name="platform" id="" checked />
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
+                      stroke="#141312"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  По цене
+                </label>
+              </div>
+              <div class="option">
+                <label>
+                  <input type="radio" name="platform" id="" />
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.5 1L1 3.35294M3.5 1L6 3.35294M3.5 1V11"
+                      stroke="#141312"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  По цене
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
-      
-    </div>
-    <aside class="filter">
-      <div class="filter__price">
-        <header>Цена за сутки,₽</header>
-        <label>от <input type="number" value="100" name="" id=""></label>
-        <label>до <input type="number" value="600" name="" id=""></label>
-      </div>
-      <div class="filter__square">
-        <header>Площадь</header>
-        <ul>
-          <li><label><input type="checkbox" name="" id="">0,63 м2</label></li>
-          <li><label><input type="checkbox" name="" id="">0,90 м2</label></li>
-          <li><label><input type="checkbox" name="" id="">1,13 м2</label></li>
-          <li><label><input type="checkbox" name="" id="">1,56 м2</label></li>
-          <li><label><input type="checkbox" name="" id="">2,56 м2</label></li>
-          <li><label><input type="checkbox" name="" id="">2,88 м2</label></li>
-        </ul>
-      </div>
-      <div class="filter__furniture">
-        <header>Оснащение номера</header>
-        <ul>
-          <li><label><input type="checkbox" name="" id="">Пустой номер</label></li>
-          <li><label><input type="checkbox" name="" id="">Лежак</label></li>
-          <li><label><input type="checkbox" name="" id="">Когтеточка</label></li>
-          <li><label><input type="checkbox" name="" id="">Игровой-комплекс</label></li>
-          <li><label><input type="checkbox" name="" id="">Домик</label></li>
-        </ul>
-      </div>
-      <button class="submit">Применить</button>
-      <button class="reset">Сбросить фильтр</button>
-    </aside>
-    <section class="variants">
-      <div class="card">
-        <div class="card__image-container"><img src="" alt="котик"></div>
-        <div class="card__body">
-          <h2>Эконом</h2>
+      <aside class="filter">
+        <div class="filter__price">
+          <header>Цена за сутки,₽</header>
+          <label>от <input type="number" value="100" name="" id=""/></label>
+          <label>до <input type="number" value="600" name="" id=""/></label>
+        </div>
+        <div class="filter__square">
+          <header>Площадь</header>
           <ul>
-            <li>Размеры (ШхГхВ) - <span>90х70х180 см</span></li>
-            <li>Площадь - <span>0,63 м2</span></li>
             <li>
-              Оснащение номера 
-              <ul>
-                <!-- a li for each -->
-                <li></li>
-              </ul>
+              <label><input type="checkbox" name="" id="" />0,63 м2</label>
             </li>
-            <li>Цена за сутки: <span>100₽</span></li>
-            <button>Забронировать</button>
+            <li>
+              <label><input type="checkbox" name="" id="" />0,90 м2</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="" id="" />1,13 м2</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="" id="" />1,56 м2</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="" id="" />2,56 м2</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="" id="" />2,88 м2</label>
+            </li>
           </ul>
         </div>
-      </div>
-    </section>
+        <div class="filter__furniture">
+          <header>Оснащение номера</header>
+          <ul>
+            <li>
+              <label><input type="checkbox" name="" id="" />Пустой номер</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="" id="" />Лежак</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="" id="" />Когтеточка</label>
+            </li>
+            <li>
+              <label
+                ><input type="checkbox" name="" id="" />Игровой-комплекс</label
+              >
+            </li>
+            <li>
+              <label><input type="checkbox" name="" id="" />Домик</label>
+            </li>
+          </ul>
+        </div>
+        <button class="submit">Применить</button>
+        <button class="reset">Сбросить фильтр</button>
+      </aside>
+      <section class="variants">
+        <div class="card">
+          <div class="card__image-container"><img src="" alt="котик" /></div>
+          <div class="card__body">
+            <h2>Эконом</h2>
+            <ul>
+              <li>Размеры (ШхГхВ) - <span>90х70х180 см</span></li>
+              <li>Площадь - <span>0,63 м2</span></li>
+              <li>
+                Оснащение номера
+                <ul>
+                  <!-- a li for each -->
+                  <li></li>
+                </ul>
+              </li>
+              <li>Цена за сутки: <span>100₽</span></li>
+              <button>Забронировать</button>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  </main>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>

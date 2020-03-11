@@ -1,39 +1,45 @@
-@import '_reset';
+@import "_reset";
+
+* {
+  &:focus {
+    outline: none;
+  }
+}
 
 // Lato font
 // Lato Regular
 @font-face {
-  font-family: 'Lato';
-  src: url('./fonts/Lato/Lato-Regular.ttf') format('truetype');
+  font-family: "Lato";
+  src: url("./fonts/Lato/Lato-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 
 // Lato Medium
 @font-face {
-  font-family: 'Lato';
-  src: url('./fonts/Lato/Lato-Medium.ttf') format('truetype');
+  font-family: "Lato";
+  src: url("./fonts/Lato/Lato-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 
 // Lato Semibold
 @font-face {
-  font-family: 'Lato';
-  src: url('./fonts/Lato/Lato-Semibold.ttf') format('truetype');
+  font-family: "Lato";
+  src: url("./fonts/Lato/Lato-Semibold.ttf") format("truetype");
   font-weight: 600;
 }
 
 // Rubik font
 // Rubik Medium
 @font-face {
-  font-family: 'Rubik';
-  src: url('./fonts/Rubik/Rubik-Medium.ttf') format('truetype');
+  font-family: "Rubik";
+  src: url("./fonts/Rubik/Rubik-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 
 // Rubik Bold
 @font-face {
-  font-family: 'Rubik';
-  src: url('./fonts/Rubik/Rubik-Bold.ttf') format('truetype');
+  font-family: "Rubik";
+  src: url("./fonts/Rubik/Rubik-Bold.ttf") format("truetype");
   font-weight: 800;
 }
 
@@ -47,8 +53,8 @@ $bigger-text: 16px;
 $small-header: 20px;
 $header: 36px;
 
-$yellow: #FAC663;
-$orange: #FF7236;
+$yellow: #fac663;
+$orange: #ff7236;
 
 $Rubik: Rubik, sans-serif;
 $Lato: Lato, sans-serif;
@@ -64,18 +70,40 @@ nav {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 70px;
+
   ul {
     display: flex;
+
     li {
       margin-right: 30px;
       font-size: 16px;
       font-weight: $semi-bold;
+
       &:last-child {
         margin-right: 0px;
       }
+
       a {
         text-decoration: none;
         color: black;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 0%;
+          height: 3px;
+          background-color: $yellow;
+          transition: width 0.2s ease;
+        }
+
+        &:hover {
+          &:after {
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -83,51 +111,81 @@ nav {
 
 main {
   margin: 0 98px;
+
   .row {
-    
     display: flex;
     justify-content: space-between;
+
     h1 {
       font-size: 36px;
       font-weight: $bold;
       font-family: $Rubik;
     }
+
     .custom-select {
       position: relative;
-      
-      select {
-        -webkit-appearance: none;
+      width: 174px;
+
+      #options-view-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+      }
+
+      #selected-value {
+        font-size: 16px;
+        line-height: 1;
+        margin-right: 26px;
+      }
+
+      #arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 12px;
+        transform: rotate(180deg);
+      }
+
+      #options-view-button:checked {
+        display: block;
+
+        & ~ #options {
+          display: block;
+        }
+
+        & + #select-button #arrow {
+          transform: rotate(0deg);
+        }
+      }
+
+      #options {
+        position: absolute;
         width: 174px;
-        position: relative;
-        background-color: white;
-        border-radius: 4px;
-        border-color: transparent;
+        right: 0;
         box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+        border-radius: 4px;
         padding: 12px 20px;
-        option {
-          background-color: black;
-          padding: 12px 0;
-          height: 36px;
+        display: none;
+        .option {
+          margin-bottom: 25px;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
-        .square_asc:before {
-          content: url('img/asc.svg');
-        }
-        .price_asc:before {
-          content: url('img/asc.svg');
-        }
-        .square_des:before {
-          content: url('img/des.svg');
-        }
-        .price_des:before {
-          content: url('img/des.svg');
-        }
-        &:after {
-          z-index: 9999;
-          position: absolute;
-          content: url('img/arrow-down.svg');
-        }
+      }
+
+      .select-input {
+        display: flex;
       }
     }
   }
-  
 }
