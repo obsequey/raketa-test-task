@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test 2</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rubik:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -18,15 +17,28 @@
     </ul>
   </nav>
   <main>
-    <header>
-      Наши номера
-      <select name="" id="" class="filter">
-        <option value="square_asc">По площади</option>
-        <option value="square_des">По площади</option>
-        <option value="price_asc">По цене</option>
-        <option value="price_des">По цене</option>
-      </select>
-    </header>
+    <div class="row">
+      <h1>Наши номера</h1>
+      <div class="custom-select dropdown-opened">
+        <select name="" id="">
+          <option value="square_asc">
+            <svg width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.5 11L6 8.647M3.5 11L1 8.647M3.5 11V1" stroke="#141312" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            По площади
+          </option>
+          <option value="square_des">По площади</option>
+          <option value="price_asc">
+              <svg width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.5 11L6 8.647M3.5 11L1 8.647M3.5 11V1" stroke="#141312" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              По цене
+            </option>
+          <option value="price_des">По цене</option>
+        </select>
+      </div>
+      
+    </div>
     <aside class="filter">
       <div class="filter__price">
         <header>Цена за сутки,₽</header>

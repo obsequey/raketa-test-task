@@ -16,7 +16,8 @@ async function transpileScripts() {
 async function transpileStyles() {
   return await src('src/*.scss')
     .pipe(sass({
-      includePaths: ['node_modules/reset-css/sass']
+      includePaths: ['node_modules/reset-css/sass'],
+
     }))
     .pipe(autoprefixer())
     .pipe(dest('dist'))
@@ -28,10 +29,15 @@ async function transpileMarkup() {
     .pipe(dest('dist'))
 }
 
-async function processAssets() {
+async function processImages() {
   return await src('src/img/*')
     .pipe(imagemin())
     .pipe(dest('dist/img'))
+}
+
+async function processFonts() {
+  return await src('src/fonts/*/*.ttf')
+    .pipe(dest('dist/fonts'))
 }
 
 function watcher() {
@@ -45,5 +51,5 @@ function watcher() {
   watch('src/*.html', transpileMarkup).on('change', browserSync.reload)
 }
 
-exports.default = series(transpileStyles, transpileScripts, transpileMarkup, processAssets, watcher)
-exports.build = series(transpileStyles, transpileScripts, transpileMarkup, processAssets)
+exports.default = series(transpileStyles, transpileScripts, transpileMarkup, processImages, processFonts, watcher)
+exports.build = series(transpileStyles, transpileScripts, transpileMarkup, processImages, processFonts,)
