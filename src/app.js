@@ -160,6 +160,7 @@ function renderCatFurniture(cards) {
 renderCardsToPage(cards);
 renderCatFurniture(cards);
 
+// FILTER
 function controlResetButton() {
   const filterCheckboxes = document.querySelectorAll(
     ".filter input[type='checkbox']"
@@ -177,6 +178,67 @@ function controlResetButton() {
     });
   });
 }
+
+// render squares as options to the square section of the filter
+function renderSquareOptions(cards) {
+  const squareOptions = document.getElementById("square-options");
+  cards.forEach(card => {
+    const newSquareOption = document.createElement("li");
+    newSquareOption.innerHTML = `
+      <label>
+        <input checked type="checkbox" name="" value="${card.square}"/>
+        <span class="checkmark"></span>${beautifyStr(card.square)} м2
+      </label>
+    `;
+    squareOptions.appendChild(newSquareOption);
+  });
+}
+
+function beautifyStr(num) {
+  return String(num).length < 4
+    ? String(num).replace(".", ",") + "0"
+    : String(num).replace(".", ",");
+}
+
+// render furniture options to the furniture section of the filter
+function renderFurnitureOptions(cards) {
+  const furnitureOptionsContainer = document.getElementById(
+    "furniture-options"
+  );
+  const fullFurnitureList = cards.reduce((furnitureList, card) => {
+    card.furniture.forEach(furnitureItem => {
+      if (!furnitureList.includes(furnitureItem))
+        furnitureList.push(furnitureItem);
+    });
+    return furnitureList;
+  }, []);
+
+  console.log(fullFurnitureList);
+
+  fullFurnitureList.forEach(furnitureOption => {
+    const newFurnitureOption = document.createElement("li");
+    newFurnitureOption.innerHTML = `
+      <label>
+        <input checked type="checkbox" name="" value="${furnitureOption}"/>
+        <span class="checkmark"></span>
+        ${furnitureKeys[furnitureOption]}
+      </label>
+    `;
+    furnitureOptionsContainer.appendChild(newFurnitureOption);
+  });
+}
+
+// TODO: function to render new cards array based on filter options when when accept is clicked
+function filterCards(cards) {
+  const filterInputs = document.querySelectorAll(".filter input");
+  console.log(filterInputs);
+}
+
+// TODO: listener to click of 'reset' button to reset filters fields to all-selected state
+
+renderSquareOptions(cards);
+renderFurnitureOptions(cards);
+controlResetButton();
 
 // SORT
 function showSortDropdown() {
