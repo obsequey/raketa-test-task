@@ -178,4 +178,53 @@ function showResetButton() {
   });
 }
 
-showResetButton();
+// SORT
+function showSortDropdown() {
+  // 1. select #select-button
+  const dropdownOpenerDiv = document.getElementById("select-button");
+  // 2. on click add class 'visible' to options
+  dropdownOpenerDiv.addEventListener("click", () => {
+    document.getElementById("options").classList.add("visible");
+    // 3. rotate arrow
+    document.getElementById("arrow").classList.add("rotated");
+  });
+}
+
+function chooseOptionFromSortDropdown() {
+  const radiosNodeList = document.querySelectorAll(
+    '.custom-select input[type="radio"]'
+  );
+  const radiosArray = Array.from(radiosNodeList);
+  const selectedValue = document.getElementById("selected-value");
+  radiosArray.forEach((radio, i) => {
+    radiosNodeList[i].addEventListener("click", () => {
+      const newSelectedRadioButton = radiosNodeList[i];
+      const newSelectedValue =
+        newSelectedRadioButton.nextElementSibling.innerHTML;
+      selectedValue.innerHTML = newSelectedValue;
+      // 1. #options and arrow
+      const optionsNode = document.getElementById("options");
+      const arrow = document.getElementById("arrow");
+      // 2. set max-height to 0
+      optionsNode.classList.remove("visible");
+      //3. remove arrow rotated
+      arrow.classList.remove("rotated");
+      // render cards in new order
+      renderCardsToPage(
+        reorderCardsArrayByChosenOption(cards, newSelectedRadioButton.value)
+      );
+    });
+  });
+}
+
+function reorderCardsArrayByChosenOption(cardsArray, sortOption) {
+  const sortOptions = sortOption.split("_");
+  const sortHow = sortOptions[0] === "asc" ? 1 : -1;
+  const sortWhat = sortOptions[1];
+  return cardsArray.sort(
+    (prevCard, nextCard) => sortHow * (prevCard[sortWhat] - nextCard[sortWhat])
+  );
+}
+
+showSortDropdown();
+chooseOptionFromSortDropdown();
