@@ -6,9 +6,30 @@
     <title>Test 2</title>
     <link rel="stylesheet" href="main.css" />
   </head>
+
   <body>
     <nav>
       <div class="logo-container"><img src="img/logo.svg" alt="лого" /></div>
+      <input type="checkbox" />
+      <div class="nav-burger">
+        <?xml version="1.0" ?>
+        <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'
+        ><svg
+          height="32px"
+          id="Layer_1"
+          style="enable-background:new 0 0 32 32;"
+          version="1.1"
+          viewBox="0 0 32 32"
+          width="32px"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <path
+            d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+          />
+        </svg>
+      </div>
       <ul>
         <li><a href="#">Почему мы?</a></li>
         <li><a href="#">Номера</a></li>
@@ -21,9 +42,26 @@
         <h1>Наши номера</h1>
         <form class="custom-select">
           <div class="select-box">
-            <input type="checkbox" name="" id="options-view-button" />
             <div id="select-button" class="select-input">
-              <div id="selected-value"></div>
+              <div id="selected-value">
+                <span class="option-dropdown">
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.5 1L1 3.35294M3.5 1L6 3.35294M3.5 1V11"
+                      stroke="#141312"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  По цене
+                </span>
+              </div>
               <svg
                 id="arrow"
                 width="14"
@@ -45,500 +83,161 @@
               <!-- 1 option -->
               <div class="option">
                 <label>
-                  <input type="radio" name="platform" />
-                  <svg
-                    width="7"
-                    height="12"
-                    viewBox="0 0 7 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.5 1L1 3.35294M3.5 1L6 3.35294M3.5 1V11"
-                      stroke="#141312"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  По площади
+                  <input type="radio" name="platform" value="asc_square" />
+                  <span class="option-dropdown">
+                    <svg
+                      width="7"
+                      height="12"
+                      viewBox="0 0 7 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.5 1L1 3.35294M3.5 1L6 3.35294M3.5 1V11"
+                        stroke="#141312"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    По площади
+                  </span>
                 </label>
               </div>
               <!-- 2 option -->
               <div class="option">
                 <label>
-                  <input type="radio" name="platform" />
-                  <svg
-                    width="7"
-                    height="12"
-                    viewBox="0 0 7 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
-                      stroke="#141312"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  По площади
+                  <input type="radio" name="platform" value="des_square" />
+                  <span class="option-dropdown">
+                    <svg
+                      width="7"
+                      height="12"
+                      viewBox="0 0 7 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
+                        stroke="#141312"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    По площади
+                  </span>
                 </label>
               </div>
               <!-- 3 option -->
               <div class="option">
                 <label>
-                  <input type="radio" name="platform" checked />
-                  <svg
-                    width="7"
-                    height="12"
-                    viewBox="0 0 7 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.5 1L1 3.35294M3.5 1L6 3.35294M3.5 1V11"
-                      stroke="#141312"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  По цене
+                  <input
+                    type="radio"
+                    name="platform"
+                    value="asc_price"
+                    checked
+                  />
+                  <span class="option-dropdown">
+                    <svg
+                      width="7"
+                      height="12"
+                      viewBox="0 0 7 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.5 1L1 3.35294M3.5 1L6 3.35294M3.5 1V11"
+                        stroke="#141312"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    По цене
+                  </span>
                 </label>
               </div>
               <!-- 4 option -->
               <div class="option">
                 <label>
-                  <input type="radio" name="platform" />
-                  <svg
-                    width="7"
-                    height="12"
-                    viewBox="0 0 7 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
-                      stroke="#141312"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  По цене
+                  <input type="radio" name="platform" value="des_price" />
+                  <span class="option-dropdown">
+                    <svg
+                      width="7"
+                      height="12"
+                      viewBox="0 0 7 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.5 11L6 8.64706M3.5 11L1 8.64706M3.5 11L3.5 1"
+                        stroke="#141312"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    По цене
+                  </span>
                 </label>
               </div>
             </div>
           </div>
         </form>
       </div>
-      <input type="checkbox" id="show-filter" />
-      <button id="show-filter-button" class="hidden">
-        Показать фильтр
-        <svg
-          id="arrow"
-          width="14"
-          height="8"
-          viewBox="0 0 14 8"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M13 7L7 1L1 7"
-            stroke="#1A212F"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <aside class="filter">
-        <div class="filter__price">
-          <header>Цена за сутки,₽</header>
-          <label
-            ><span>от</span><input type="number" value="100" name=""
-          /></label>
-          <label
-            ><span>до</span><input type="number" value="600" name=""
-          /></label>
-        </div>
-        <div class="filter__square">
-          <header>Площадь</header>
-          <ul>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >0,63 м2
-              </label>
-            </li>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >0,90 м2
-              </label>
-            </li>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >1,13 м2
-              </label>
-            </li>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >1,56 м2
-              </label>
-            </li>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >2,56 м2
-              </label>
-            </li>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >2,88 м2
-              </label>
-            </li>
-          </ul>
-        </div>
-        <div class="filter__furniture">
-          <header>Оснащение номера</header>
-          <ul>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >Пустой номер</label
-              >
-            </li>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >Лежак</label
-              >
-            </li>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >Когтеточка</label
-              >
-            </li>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >Игровой-комплекс</label
-              >
-            </li>
-            <li>
-              <label
-                ><input checked type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-                >Домик</label
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="filter__buttons">
-          <button class="submit">Применить</button>
-          <button class="reset shown">Сбросить фильтр</button>
-        </div>
-      </aside>
-      <section class="variants">
-        <div class="card">
-          <div class="card__image-container">
-            <img src="http://placekitten.com/200/300" alt="котик" />
+      <div class="filter-box">
+        <input type="checkbox" id="show-filter" />
+        <button id="show-filter-button" class="hidden">
+          Показать фильтр
+          <svg
+            id="filter-arrow"
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 7L7 1L1 7"
+              stroke="#1A212F"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <aside class="filter">
+          <div class="filter__price">
+            <header>Цена за сутки,₽</header>
+            <label
+              ><span>от</span><input type="number" value="100" name=""
+            /></label>
+            <label
+              ><span>до</span><input type="number" value="600" name=""
+            /></label>
           </div>
-          <div class="card__body">
-            <h2>Эконом</h2>
-            <ul class="card__body__options">
-              <li class="card__body__options__size">
-                Размеры (ШхГхВ) - <span>90х70х180 см</span>
-              </li>
-              <li class="card__body__options__square">
-                Площадь - <span>0,63 м2</span>
-              </li>
-              <li class="card__body__options__furrrniture">
-                Оснащение номера
-                <ul class="card__body__options__furrrniture__list">
-                  <!-- a li for each -->
-                  <!-- <li class="none"></li> -->
-                  <li class="bed"></li>
-                  <li class="claw"></li>
-                  <li class="ball"></li>
-                  <li class="house"></li>
-                </ul>
-              </li>
-              <li class="card__body__options__price">
-                Цена за сутки: <span>100₽</span>
+          <div class="filter__square">
+            <header>Площадь</header>
+            <ul id="square-options"></ul>
+          </div>
+          <div class="filter__furniture">
+            <header>Оснащение номера</header>
+            <ul id="furniture-options">
+              <li>
+                <label
+                  ><input checked type="checkbox" name="" /><span
+                    class="checkmark"
+                    value="none"
+                  ></span
+                  >Пустой номер</label
+                >
               </li>
             </ul>
-            <button>
-              Забронировать
-              <!-- paw -->
-              <div class="paw">
-                <svg
-                  width="21"
-                  height="18"
-                  viewBox="0 0 21 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.4255 6.66211C13.6257 8.26781 14.1025 12.9548 17.1394 12.9548C18.4492 12.9548 19.5828 11.9701 20.0875 10.7113C21.2531 7.80396 18.8292 5.28303 16.4255 6.66211Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M13.5497 7.24252C16.9089 7.24252 17.9147 1.53816 14.7233 0.60034C13.2692 0.173202 11.6158 1.1981 11.0848 3.07162C10.4889 5.17154 11.6612 7.24252 13.5497 7.24252Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M12.6853 17.3964C12.2188 17.2674 11.3908 17.1844 10.5242 17.1724C9.60809 17.1589 8.64896 17.2246 8.02839 17.3964C6.35233 17.8633 4.07172 16.7337 4.57211 14.3876C5.03496 12.2187 6.69798 12.3423 7.09124 10.2868C7.48748 8.2095 9.02735 7.20696 10.5242 7.28533C11.9095 7.35805 13.2578 8.35706 13.6252 10.2873C14.0162 12.3442 15.6757 12.2194 16.1379 14.3876C16.6401 16.7356 14.3547 17.8591 12.6853 17.3964Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M7.63718 7.24269C8.58737 7.24269 9.40342 6.69082 9.85688 5.84619C11.2049 3.33466 8.99093 -0.142223 6.46334 0.602387C3.26643 1.5428 4.2798 7.24269 7.63718 7.24269Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M6.11888 11.0872C7.19749 8.44816 4.64082 5.22449 2.19906 6.2388C-0.74218 7.46044 0.555041 12.7294 3.78905 12.7294C4.82692 12.7294 5.7089 12.0905 6.11888 11.0872Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M12.6854 17.3964C12.2189 17.2674 11.3909 17.1843 10.5243 17.1723V7.28528C11.9096 7.358 13.2579 8.35701 13.6253 10.2873C14.0162 12.3441 15.6758 12.2194 16.138 14.3876C16.6402 16.7355 14.3548 17.859 12.6854 17.3964Z"
-                    fill="#FF7236"
-                  />
-                </svg>
-              </div>
-            </button>
           </div>
-        </div>
-        <div class="card">
-          <div class="card__image-container">
-            <img src="http://placekitten.com/200/300" alt="котик" />
+          <div class="filter__buttons">
+            <button class="submit">Применить</button>
+            <button class="reset shown">Сбросить фильтр</button>
           </div>
-          <div class="card__body">
-            <h2>Эконом</h2>
-            <ul class="card__body__options">
-              <li class="card__body__options__size">
-                Размеры (ШхГхВ) - <span>90х70х180 см</span>
-              </li>
-              <li class="card__body__options__square">
-                Площадь - <span>0,63 м2</span>
-              </li>
-              <li class="card__body__options__furrrniture">
-                Оснащение номера
-                <ul class="card__body__options__furrrniture__list">
-                  <!-- a li for each -->
-                  <!-- <li class="none"></li> -->
-                  <li class="bed"></li>
-                  <li class="claw"></li>
-                  <li class="ball"></li>
-                  <li class="house"></li>
-                </ul>
-              </li>
-              <li class="card__body__options__price">
-                Цена за сутки: <span>100₽</span>
-              </li>
-            </ul>
-            <button>
-              Забронировать
-              <!-- paw -->
-              <div class="paw">
-                <svg
-                  width="21"
-                  height="18"
-                  viewBox="0 0 21 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.4255 6.66211C13.6257 8.26781 14.1025 12.9548 17.1394 12.9548C18.4492 12.9548 19.5828 11.9701 20.0875 10.7113C21.2531 7.80396 18.8292 5.28303 16.4255 6.66211Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M13.5497 7.24252C16.9089 7.24252 17.9147 1.53816 14.7233 0.60034C13.2692 0.173202 11.6158 1.1981 11.0848 3.07162C10.4889 5.17154 11.6612 7.24252 13.5497 7.24252Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M12.6853 17.3964C12.2188 17.2674 11.3908 17.1844 10.5242 17.1724C9.60809 17.1589 8.64896 17.2246 8.02839 17.3964C6.35233 17.8633 4.07172 16.7337 4.57211 14.3876C5.03496 12.2187 6.69798 12.3423 7.09124 10.2868C7.48748 8.2095 9.02735 7.20696 10.5242 7.28533C11.9095 7.35805 13.2578 8.35706 13.6252 10.2873C14.0162 12.3442 15.6757 12.2194 16.1379 14.3876C16.6401 16.7356 14.3547 17.8591 12.6853 17.3964Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M7.63718 7.24269C8.58737 7.24269 9.40342 6.69082 9.85688 5.84619C11.2049 3.33466 8.99093 -0.142223 6.46334 0.602387C3.26643 1.5428 4.2798 7.24269 7.63718 7.24269Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M6.11888 11.0872C7.19749 8.44816 4.64082 5.22449 2.19906 6.2388C-0.74218 7.46044 0.555041 12.7294 3.78905 12.7294C4.82692 12.7294 5.7089 12.0905 6.11888 11.0872Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M12.6854 17.3964C12.2189 17.2674 11.3909 17.1843 10.5243 17.1723V7.28528C11.9096 7.358 13.2579 8.35701 13.6253 10.2873C14.0162 12.3441 15.6758 12.2194 16.138 14.3876C16.6402 16.7355 14.3548 17.859 12.6854 17.3964Z"
-                    fill="#FF7236"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card__image-container">
-            <img src="http://placekitten.com/200/300" alt="котик" />
-          </div>
-          <div class="card__body">
-            <h2>Эконом</h2>
-            <ul class="card__body__options">
-              <li class="card__body__options__size">
-                Размеры (ШхГхВ) - <span>90х70х180 см</span>
-              </li>
-              <li class="card__body__options__square">
-                Площадь - <span>0,63 м2</span>
-              </li>
-              <li class="card__body__options__furrrniture">
-                Оснащение номера
-                <ul class="card__body__options__furrrniture__list">
-                  <!-- a li for each -->
-                  <!-- <li class="none"></li> -->
-                  <li class="bed"></li>
-                  <li class="claw"></li>
-                  <li class="ball"></li>
-                  <li class="house"></li>
-                </ul>
-              </li>
-              <li class="card__body__options__price">
-                Цена за сутки: <span>100₽</span>
-              </li>
-            </ul>
-            <button>
-              Забронировать
-              <!-- paw -->
-              <div class="paw">
-                <svg
-                  width="21"
-                  height="18"
-                  viewBox="0 0 21 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.4255 6.66211C13.6257 8.26781 14.1025 12.9548 17.1394 12.9548C18.4492 12.9548 19.5828 11.9701 20.0875 10.7113C21.2531 7.80396 18.8292 5.28303 16.4255 6.66211Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M13.5497 7.24252C16.9089 7.24252 17.9147 1.53816 14.7233 0.60034C13.2692 0.173202 11.6158 1.1981 11.0848 3.07162C10.4889 5.17154 11.6612 7.24252 13.5497 7.24252Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M12.6853 17.3964C12.2188 17.2674 11.3908 17.1844 10.5242 17.1724C9.60809 17.1589 8.64896 17.2246 8.02839 17.3964C6.35233 17.8633 4.07172 16.7337 4.57211 14.3876C5.03496 12.2187 6.69798 12.3423 7.09124 10.2868C7.48748 8.2095 9.02735 7.20696 10.5242 7.28533C11.9095 7.35805 13.2578 8.35706 13.6252 10.2873C14.0162 12.3442 15.6757 12.2194 16.1379 14.3876C16.6401 16.7356 14.3547 17.8591 12.6853 17.3964Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M7.63718 7.24269C8.58737 7.24269 9.40342 6.69082 9.85688 5.84619C11.2049 3.33466 8.99093 -0.142223 6.46334 0.602387C3.26643 1.5428 4.2798 7.24269 7.63718 7.24269Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M6.11888 11.0872C7.19749 8.44816 4.64082 5.22449 2.19906 6.2388C-0.74218 7.46044 0.555041 12.7294 3.78905 12.7294C4.82692 12.7294 5.7089 12.0905 6.11888 11.0872Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M12.6854 17.3964C12.2189 17.2674 11.3909 17.1843 10.5243 17.1723V7.28528C11.9096 7.358 13.2579 8.35701 13.6253 10.2873C14.0162 12.3441 15.6758 12.2194 16.138 14.3876C16.6402 16.7355 14.3548 17.859 12.6854 17.3964Z"
-                    fill="#FF7236"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card__image-container">
-            <img src="http://placekitten.com/200/300" alt="котик" />
-          </div>
-          <div class="card__body">
-            <h2>Эконом</h2>
-            <ul class="card__body__options">
-              <li class="card__body__options__size">
-                Размеры (ШхГхВ) - <span>90х70х180 см</span>
-              </li>
-              <li class="card__body__options__square">
-                Площадь - <span>0,63 м2</span>
-              </li>
-              <li class="card__body__options__furrrniture">
-                Оснащение номера
-                <ul class="card__body__options__furrrniture__list">
-                  <!-- a li for each -->
-                  <!-- <li class="none"></li> -->
-                  <li class="bed"></li>
-                  <li class="claw"></li>
-                  <li class="ball"></li>
-                  <li class="house"></li>
-                </ul>
-              </li>
-              <li class="card__body__options__price">
-                Цена за сутки: <span>100₽</span>
-              </li>
-            </ul>
-            <button>
-              Забронировать
-              <!-- paw -->
-              <div class="paw">
-                <svg
-                  width="21"
-                  height="18"
-                  viewBox="0 0 21 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.4255 6.66211C13.6257 8.26781 14.1025 12.9548 17.1394 12.9548C18.4492 12.9548 19.5828 11.9701 20.0875 10.7113C21.2531 7.80396 18.8292 5.28303 16.4255 6.66211Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M13.5497 7.24252C16.9089 7.24252 17.9147 1.53816 14.7233 0.60034C13.2692 0.173202 11.6158 1.1981 11.0848 3.07162C10.4889 5.17154 11.6612 7.24252 13.5497 7.24252Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M12.6853 17.3964C12.2188 17.2674 11.3908 17.1844 10.5242 17.1724C9.60809 17.1589 8.64896 17.2246 8.02839 17.3964C6.35233 17.8633 4.07172 16.7337 4.57211 14.3876C5.03496 12.2187 6.69798 12.3423 7.09124 10.2868C7.48748 8.2095 9.02735 7.20696 10.5242 7.28533C11.9095 7.35805 13.2578 8.35706 13.6252 10.2873C14.0162 12.3442 15.6757 12.2194 16.1379 14.3876C16.6401 16.7356 14.3547 17.8591 12.6853 17.3964Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M7.63718 7.24269C8.58737 7.24269 9.40342 6.69082 9.85688 5.84619C11.2049 3.33466 8.99093 -0.142223 6.46334 0.602387C3.26643 1.5428 4.2798 7.24269 7.63718 7.24269Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M6.11888 11.0872C7.19749 8.44816 4.64082 5.22449 2.19906 6.2388C-0.74218 7.46044 0.555041 12.7294 3.78905 12.7294C4.82692 12.7294 5.7089 12.0905 6.11888 11.0872Z"
-                    fill="#FF7236"
-                  />
-                  <path
-                    d="M12.6854 17.3964C12.2189 17.2674 11.3909 17.1843 10.5243 17.1723V7.28528C11.9096 7.358 13.2579 8.35701 13.6253 10.2873C14.0162 12.3441 15.6758 12.2194 16.138 14.3876C16.6402 16.7355 14.3548 17.859 12.6854 17.3964Z"
-                    fill="#FF7236"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-      </section>
+        </aside>
+      </div>
+      <section class="variants" id="cards-list"></section>
     </main>
-
     <script src="app.js"></script>
   </body>
 </html>
