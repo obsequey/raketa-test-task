@@ -130,6 +130,26 @@
           </div>
         </form>
       </div>
+      <input type="checkbox" id="show-filter" />
+      <button id="show-filter-button" class="hidden">
+        Показать фильтр
+        <svg
+          id="arrow"
+          width="14"
+          height="8"
+          viewBox="0 0 14 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13 7L7 1L1 7"
+            stroke="#1A212F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
       <aside class="filter">
         <div class="filter__price">
           <header>Цена за сутки,₽</header>
@@ -238,8 +258,10 @@
             </li>
           </ul>
         </div>
-        <button class="submit">Применить</button>
-        <button class="reset shown">Сбросить фильтр</button>
+        <div class="filter__buttons">
+          <button class="submit">Применить</button>
+          <button class="reset shown">Сбросить фильтр</button>
+        </div>
       </aside>
       <section class="variants">
         <div class="card">

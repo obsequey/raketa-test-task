@@ -14,6 +14,14 @@ $yellow: #fac663;
 $orange: #ff7236;
 $gray: #e1e1e1;
 
+$medium: 1366px;
+$minimum: 768px;
+
+$phone: 640px;
+$tablet: 768px;
+$desktop: 1070px;
+$big-desktop: 1366px;
+
 // Lato font
 // Lato Regular
 @font-face {
@@ -138,7 +146,16 @@ main {
     .custom-select {
       position: relative;
       width: 174px;
-
+      #arrow {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        bottom: 0;
+        width: 12px;
+        height: 6px;
+        transform: rotate(180deg);
+        z-index: 10;
+      }
       #options-view-button {
         position: absolute;
         top: 0;
@@ -153,6 +170,9 @@ main {
         z-index: 3;
         &:hover {
           background-color: $gray;
+          & ~ #arrow {
+            transform: rotate(180deg) translateY(-3px);
+          }
         }
       }
 
@@ -160,17 +180,6 @@ main {
         font-size: 16px;
         line-height: 1;
         margin-right: 26px;
-      }
-
-      #arrow {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        bottom: 0;
-        width: 12px;
-        height: 6px;
-        transform: rotate(180deg);
-        z-index: 10;
       }
 
       #options-view-button:checked {
@@ -220,11 +229,48 @@ main {
       }
     }
   }
-
+  #show-filter {
+    display: none;
+    &-button {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        svg {
+          transform: rotate(180deg) translateY(-2px);
+        }
+      }
+      svg {
+        margin-left: 15px;
+        width: 12px;
+        height: 6px;
+        transform: rotate(180deg);
+      }
+    }
+    &.hidden {
+      display: none;
+      @media (max-width: $tablet - 1) {
+        display: block;
+      }
+    }
+  }
   .filter {
     width: 210px;
-    margin-right: 60px;
+    margin-right: 90px;
     position: relative;
+    @media (max-width: $tablet - 1) {
+      width: 100%;
+      margin: 35px 0;
+    }
+
+    &.hidden {
+      max-height: 0px;
+      overflow: hidden;
+    }
 
     input[type="checkbox"] {
       display: none;
@@ -280,6 +326,7 @@ main {
       }
       label {
         position: relative;
+        margin-right: 5px;
         input {
           width: 100px;
           height: 24px;
@@ -293,72 +340,104 @@ main {
           top: 2px;
           left: 5px;
         }
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
+    &__buttons {
+      @media (min-width: $phone) and (max-width: $tablet - 1) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      button {
+        width: 185px;
+        height: 42px;
+        padding-bottom: 2px;
+        background-color: transparent;
+        border: 2px solid $yellow;
+        border-radius: 25px;
+        font-weight: $semi-bold;
+        font-family: $Lato;
+        font-size: $default-text;
+        margin-top: 15px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
 
-    button {
-      width: 185px;
-      height: 42px;
-      padding-bottom: 2px;
-      background-color: transparent;
-      border: 2px solid $yellow;
-      border-radius: 25px;
-      font-weight: $semi-bold;
-      font-family: $Lato;
-      font-size: $default-text;
-      margin-top: 15px;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-
-      &.submit {
-        background-color: $yellow;
-        &:before {
-          position: absolute;
-          top: -5px;
-          overflow: hidden;
-          // background: rgba(255, 255, 255, 0.4);
-          background: white;
-          content: "";
-          display: block;
-          width: 50px;
-          height: 50px;
-          transform: skew(-60deg) translateX(-100px);
-        }
-        &:hover {
+        &.submit {
+          background-color: $yellow;
           &:before {
-            transition: transform 0.4s ease;
-            transform: skew(-60deg) translateX(200px);
+            position: absolute;
+            top: -5px;
+            overflow: hidden;
+            // background: rgba(255, 255, 255, 0.4);
+            background: white;
+            content: "";
+            display: block;
+            width: 50px;
+            height: 50px;
+            transform: skew(-60deg) translateX(-100px);
+          }
+          &:hover {
+            &:before {
+              transition: transform 0.4s ease;
+              transform: skew(-60deg) translateX(200px);
+              @media (max-width: $tablet - 1) {
+                transform: skew(-60deg) translateX(100vw);
+              }
+            }
           }
         }
-      }
 
-      &.reset {
-        transform: translateX(-100vw);
-        &.shown {
-          transform: translateX(0);
+        &.reset {
+          transform: translateX(-100vw);
+          transition: transform 0.2s ease;
+          &.shown {
+            transform: translateX(0px);
+          }
+        }
+
+        @media (max-width: $tablet - 1) {
+          width: 100%;
         }
       }
     }
   }
 
   .variants {
-    display: flex;
-    width: calc(100% - 270px);
+    // display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+    width: calc(100% - 300px);
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
     margin-right: -60px;
+    @media (min-width: $desktop) and (max-width: $big-desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: $desktop - 1) {
+      grid-template-columns: 1fr;
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
     .card {
       min-width: 270px;
-      max-width: 320px;
+      width: 100%;
+      // max-width: 320px;
       // flex: 0 1 calc(33% - 30px);
-      width: calc(33% - 30px);
+      // width: calc(33% - 30px);
       box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
       border-radius: 6px;
-      margin-left: 30px;
-      margin-bottom: 30px;
+      // margin-left: 30px;
+      // margin-bottom: 30px;
       overflow: hidden;
+
       &__image-container {
         overflow: hidden;
         height: 185px;
