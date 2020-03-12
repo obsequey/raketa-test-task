@@ -336,14 +336,16 @@ function chooseOptionFromSortDropdown() {
       //3. remove arrow rotated
       arrow.classList.remove("rotated");
       // render cards in new order
-      renderCardsToPage(
-        reorderCardsArrayByChosenOption(cards, newSelectedRadioButton.value)
-      );
+      renderCardsToPage(reorderCardsArrayByChosenOption(cards));
     });
   });
 }
 
-function reorderCardsArrayByChosenOption(cardsArray, sortOption) {
+function reorderCardsArrayByChosenOption(cardsArray) {
+  const selectedRadioButton = document.querySelector(
+    '.custom-select input[type="radio"]:checked'
+  );
+  const sortOption = selectedRadioButton.value;
   const sortOptions = sortOption.split("_");
   const sortHow = sortOptions[0] === "asc" ? 1 : -1;
   const sortWhat = sortOptions[1];
