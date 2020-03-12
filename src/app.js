@@ -160,7 +160,7 @@ function renderCatFurniture(cards) {
 renderCardsToPage(cards);
 renderCatFurniture(cards);
 
-function showResetButton() {
+function controlResetButton() {
   const filterCheckboxes = document.querySelectorAll(
     ".filter input[type='checkbox']"
   );
