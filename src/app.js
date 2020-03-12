@@ -228,16 +228,27 @@ function renderFurnitureOptions(cards) {
   });
 }
 
-// TODO: function to render new cards array based on filter options when when accept is clicked
-function filterCards(cards) {
-  const filterInputs = document.querySelectorAll(".filter input");
-  console.log(filterInputs);
+function renderMinAndMaxPrices(cards) {
+  let minPrice = cards[0].price;
+  let maxPrice = 0;
+  cards.forEach(card => {
+    if (card.price > maxPrice) maxPrice = card.price;
+    if (card.price < minPrice) minPrice = card.price;
+  });
+  minPriceInput.value = minPrice;
+  maxPriceInput.value = maxPrice;
 }
 
-// TODO: listener to click of 'reset' button to reset filters fields to all-selected state
+function beautifyStr(num) {
+  return String(num).length < 4
+    ? String(num).replace(".", ",") + "0"
+    : String(num).replace(".", ",");
+}
 
+renderCardsToPage(cards);
 renderSquareOptions(cards);
 renderFurnitureOptions(cards);
+renderMinAndMaxPrices(cards);
 // FILTER
 function controlResetButton() {
   const filterCheckboxes = document.querySelectorAll(
