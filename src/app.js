@@ -238,7 +238,71 @@ function filterCards(cards) {
 
 renderSquareOptions(cards);
 renderFurnitureOptions(cards);
+// FILTER
+function controlResetButton() {
+  const filterCheckboxes = document.querySelectorAll(
+    ".filter input[type='checkbox']"
+  );
+  const filterCheckboxesArray = Array.from(filterCheckboxes);
+  const resetButton = document.querySelector(".filter .reset");
+
+  filterCheckboxes.forEach((checkbox, i) => {
+    checkbox.addEventListener("click", () => {
+      if (filterCheckboxesArray.some((checkbox, i) => checkbox.checked)) {
+        resetButton.classList.add("shown");
+      } else {
+        resetButton.classList.remove("shown");
+      }
+    });
+  });
+}
+
+function filterByPrice(cards) {
+  return cards.filter(
+    card =>
+      card.price <= maxPriceInput.value && card.price >= minPriceInput.value
+  );
+}
+
+function filterBySquare(cards) {
+  const squareOptions = document.querySelectorAll(
+    "#square-options input:checked"
+  );
+  const squareOptionsArray = Array.from(squareOptions);
+  const squareOptionsValues = squareOptionsArray.map(item => item.value);
+  return cards.filter(card => {
+    return squareOptionsValues.includes(String(card.square));
+  });
+}
+
+function filterByFurniture(cards) {
+  const furnitureSelectedOptions = document.querySelectorAll(
+    "#furniture-options input:checked"
+  );
+  const furnitureSelectedOptionsArray = Array.from(furnitureSelectedOptions);
+  const furnitureSelectedOptionsValues = furnitureSelectedOptionsArray.map(
+    item => item.value
+  );
+  return cards.filter(card => {
+    if (card.furniture.length === 0)
+      return furnitureSelectedOptionsValues.includes("none");
+    return card.furniture.every(item =>
+      furnitureSelectedOptionsValues.includes(item)
+    );
+  });
+}
+
+function addListenerForFilterSubmit() {
+  const acceptButton = document.querySelector(".filter__buttons .submit");
+  acceptButton.addEventListener("click", () =>
+    renderCardsToPage(filterByFurniture(filterBySquare(filterByPrice(cards))))
+  );
+}
+
+// TODO: listener to click of 'reset' button to reset filters fields to all-selected state
+
 controlResetButton();
+addListenerForFilterSubmit();
 
 // SORT
 function showSortDropdown() {
