@@ -57,6 +57,9 @@ const furnitureKeys = {
   house: "Домик"
 };
 
+const minPriceInput = document.getElementById("min-price");
+const maxPriceInput = document.getElementById("max-price");
+
 // RENDER
 function clearOldCards() {
   const optionsNode = document.getElementById("cards-list");
@@ -82,7 +85,7 @@ function renderCardsToPage(cards) {
             Размеры (ШхГхВ) - <span>${card.sizes.join("x")} см</span>
           </li>
           <li class="card__body__options__square">
-            Площадь - <span>${card.square} м2</span>
+            Площадь - <span>${beautifyStr(card.square)} м2</span>
           </li>
           <li class="card__body__options__furniture">
             Оснащение номера
@@ -136,6 +139,8 @@ function renderCardsToPage(cards) {
     `;
     optionsNode.appendChild(newCard);
   });
+  reorderCardsArrayByChosenOption(cards);
+  renderCatFurniture(cards);
 }
 
 function renderCatFurniture(cards) {
@@ -157,28 +162,6 @@ function renderCatFurniture(cards) {
   });
 }
 
-renderCardsToPage(cards);
-renderCatFurniture(cards);
-
-// FILTER
-function controlResetButton() {
-  const filterCheckboxes = document.querySelectorAll(
-    ".filter input[type='checkbox']"
-  );
-  const filterCheckboxesArray = Array.from(filterCheckboxes);
-  const resetButton = document.querySelector(".filter .reset");
-
-  filterCheckboxes.forEach((checkbox, i) => {
-    checkbox.addEventListener("click", () => {
-      if (filterCheckboxesArray.some((checkbox, i) => checkbox.checked)) {
-        resetButton.classList.add("shown");
-      } else {
-        resetButton.classList.remove("shown");
-      }
-    });
-  });
-}
-
 // render squares as options to the square section of the filter
 function renderSquareOptions(cards) {
   const squareOptions = document.getElementById("square-options");
@@ -194,12 +177,6 @@ function renderSquareOptions(cards) {
   });
 }
 
-function beautifyStr(num) {
-  return String(num).length < 4
-    ? String(num).replace(".", ",") + "0"
-    : String(num).replace(".", ",");
-}
-
 // render furniture options to the furniture section of the filter
 function renderFurnitureOptions(cards) {
   const furnitureOptionsContainer = document.getElementById(
@@ -212,8 +189,6 @@ function renderFurnitureOptions(cards) {
     });
     return furnitureList;
   }, []);
-
-  console.log(fullFurnitureList);
 
   fullFurnitureList.forEach(furnitureOption => {
     const newFurnitureOption = document.createElement("li");
@@ -249,6 +224,7 @@ renderCardsToPage(cards);
 renderSquareOptions(cards);
 renderFurnitureOptions(cards);
 renderMinAndMaxPrices(cards);
+
 // FILTER
 function controlResetButton() {
   const filterCheckboxes = document.querySelectorAll(

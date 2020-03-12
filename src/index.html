@@ -206,10 +206,12 @@
           <div class="filter__price">
             <header>Цена за сутки,₽</header>
             <label
-              ><span>от</span><input type="number" value="100" name=""
+              ><span>от</span
+              ><input id="min-price" type="number" value="0" name=""
             /></label>
             <label
-              ><span>до</span><input type="number" value="600" name=""
+              ><span>до</span
+              ><input id="max-price" type="number" value="0" name=""
             /></label>
           </div>
           <div class="filter__square">
@@ -221,9 +223,8 @@
             <ul id="furniture-options">
               <li>
                 <label
-                  ><input checked type="checkbox" name="" /><span
+                  ><input checked type="checkbox" name="" value="none" /><span
                     class="checkmark"
-                    value="none"
                   ></span
                   >Пустой номер</label
                 >
