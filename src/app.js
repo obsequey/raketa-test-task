@@ -226,7 +226,7 @@ renderFurnitureOptions(cards);
 renderMinAndMaxPrices(cards);
 
 // FILTER
-function controlResetButton() {
+function controlResetButtonAnimation() {
   const filterCheckboxes = document.querySelectorAll(
     ".filter input[type='checkbox']"
   );
@@ -286,9 +286,22 @@ function addListenerForFilterSubmit() {
   );
 }
 
-// TODO: listener to click of 'reset' button to reset filters fields to all-selected state
+function addListenerForFilterReset() {
+  const resetButton = document.querySelector(".filter .reset");
+  const filterCheckboxes = document.querySelectorAll(
+    ".filter input[type='checkbox']"
+  );
+  const filterCheckboxesArray = Array.from(filterCheckboxes);
+  resetButton.addEventListener("click", () => {
+    filterCheckboxesArray.forEach((checkbox, i) => {
+      filterCheckboxes[i].checked = "checked";
+    });
+    renderMinAndMaxPrices(cards);
+  });
+}
 
-controlResetButton();
+addListenerForFilterReset();
+controlResetButtonAnimation();
 addListenerForFilterSubmit();
 
 // SORT
